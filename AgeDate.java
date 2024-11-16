@@ -51,9 +51,7 @@ public class AgeDate{
             months = Integer.parseInt(age_str[0]);
             days = Integer.parseInt(age_str[1]);
         }
-
-        int total_days = ((int)(years*365.2422) + (int)(months*30.4167) + days) + 1;
-        LocalDate temp_dob = present.minusDays(total_days);
+        LocalDate temp_dob = present.minusYears(years).minusMonths(months).minusDays(days);
 
         String temp = converter_to_string(temp_dob, format);
 
